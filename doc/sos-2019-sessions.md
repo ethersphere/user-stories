@@ -9,25 +9,24 @@ and planning of specific issues.
 This document is a write up of the sessions which have been running, to document and share its outcomes.
 
 ## Monday 26.05.2019 ##
-### What ###
-Timeboxing of the day and planning
-### When ###
+### Timeboxing of the day and planning ###
+#### When ####
 10:00am - 10:30am
-### Who ###
+#### Who ####
 Swarm core team
 Piper Merriam - ethereum python team
-### Results ###
+#### Results ####
 Detailed timeboxed planning for the day
 
-### What ###
-Chunker refactoring
-### When ###
+### Chunker refactoring ###
+
+#### When ####
 10:30am - 1pm
-### Who ###
+#### Who ####
 Swarm core team
 Vero Estrada - entanglement codes
 [Vero's mate] - entanglement codes
-### Results ###
+#### Results ####
 When a file is submitted to the system, the input data stream is then transformed into chunks, encrypted, then hashed and stored. This results in a single root chunk reference of the data.
 
 Another requirement is to have append functionality.
@@ -62,13 +61,13 @@ Create tests to integrate the entanglement package. Simplest is to have simple t
 Create a user story (“Recover files”)
 
 
-### What ###
-Push syncing
-### When ###
+### Push syncing ###
+
+#### When ####
 2pm - 3:30pm
-### Who ###
+#### Who ####
 Swarm core team
-### Results ###
+#### Results ####
 Push and pull syncing work together to get chunks to where they are supposed to be stored (to the local neighbourhood where they belong).
 Push syncing verifiably sends the chunk to the NN.
 
@@ -97,14 +96,14 @@ Push-sync addresses the use case of a user **upload** of a file, ensuring that i
 
 Pull-sync tackles chunk syncing from a network point of view: distribute chunks which are relevant to a node based on network topology. This is essential for example for new nodes coming online.
 
-### What ###
-Ethereum state on swarm
-### When ###
+### Ethereum state on swarm ###
+
+#### When ####
 3:30pm - 5pm
-### Who ###
+#### Who ####
 Piper Merriam - ethereum python team
 Swarm core team
-### Results ###
+#### Results ####
 Piper describes his proposal about how to bring ethereum state on swarm.
 
 To minimize risks and maximally explore potential, a multi-stage approach is proposed:
@@ -150,35 +149,35 @@ Project planning:
 
 This looks like a **very important** use case which can dramatically boost Swarm's visibility and spark widespread interest into the project, let alone create huge potential for attracting substantial funding. Efficient and simple handling of sync data for ethereum clients is an expressed and urgent need of the ethereum eco-systems community. If even the holy grail of storing ethereum's state data on Swarm, an important option and potential solution for the major scalability and usability bottleneck in the ethereum eco-system can be offered.
 
-### What ###
-Swarm admin planning
-### When ###
+### Swarm admin planning ###
+
+#### When ####
 5pm - 6pm
-### Who ###
+#### Who ####
 Swarm core team
-### Results ###
+#### Results ####
 We did some issue cleanup and board grooming.
 
 ## Tuesday 27.05.2019 ##
-### What ###
-Timeboxing of the day and planning
-### When ###
+### Timeboxing of the day and planning ###
+
+#### When ####
 10:00am - 10:30am
-### Who ###
+#### Who ####
 Swarm core team
-### Results ###
+#### Results ####
 Detailed timeboxed planning for the day
 
-### What ###
-Pinned content
-### When ###
+#### Pinned content ####
+
+#### When ####
 10:30am - 11:30am
-### Who ###
+#### Who ####
 Gregor - Datafund
 Daniel - Datafund
 Zahoor - Datafund
 Swarm core team
-### Results ###
+#### Results ####
 Specific indexes for pinned content will be created. This allows chunks to be marked as pinned inside Swarm's localstore.
 
 This approach adds pinned content to a Swarm node while integrating it nicely into the existing infrastructure and actually provides pinned content as a permanent feature for the Swarm network. This should be a major improvement in usability as Swarm node operators can rely on the availability of data which they upload locally. Specifically for dApp development this is an important support.
@@ -187,25 +186,25 @@ New admin endpoints ("bzz-admin") will be added so that pinned content can be up
 
 Due to the limited availability of the Swarm team, Datafund will provide resources to implement this functionality (Zahoor).
 
-### What ###
-Communications and website
-### When ###
+### Communications and website ###
+
+#### When ####
 11:30am - 12:00pm
-### Who ###
+#### Who ####
 Datafund team
 Swarm core team
 
-### Results ###
+#### Results ####
 Datafund to help provide external support for the redesign of Swarm's webpage.
 
 
-### What ###
-Pull syncing
-### When ###
+### Pull syncing ###
+
+#### When ####
 12:00pm - 1pm
-### Who ###
+#### Who ####
 Swarm core team
-### Results ###
+#### Results ####
 Pull syncing is currently over-complex and difficult to maintain, debug and extend. It should be refactored.
 
 The protocol itself also suffers from unnecessary complexity and design flaws (server driven, intervals dictated by server).
@@ -219,14 +218,14 @@ This important decision fundamentally changes current thinking about incentiviza
 
 This new model will be designed in detail in a further session (Wednesday 29.05.2019).
 
-### What ###
-Infrastructure for dApps
-### When ###
+### Infrastructure for dApps ###
+
+#### When ####
 2pm - 3pm
-### Who ###
+#### Who ####
 Dimitry - BeeFree
 Swarm core team
-### Results ###
+#### Results ####
 Dimitry outlines what seems to be the outcome of multiple conversations among different projects using Swarm from a dApp development point of view.
 He describes a general usage pattern where user data is basically stored under a ENS name (e.g. "myname.eth").
 Then, the technical stack could look like:
@@ -265,13 +264,13 @@ The Swarm team asked Dimitry how it best could help in the short-term to support
 
 The Swarm team concludes by stating that it currently can not contribute this resource, clarifying that it doesn't and probably shouldn't take on responsibility for the implementation of javascript upper level library - at least not for now. Nevertheless the team emphasizes its willingness to support projects building on Swarm in any way possible in the current scope and capabilities of the organization.
 
-### What ###
-Release planning
-### When ###
+### Release planning ###
+
+#### When ####
 3pm - 4pm
-### Who ###
+#### Who ####
 Swarm core team
-### Results ###
+#### Results ####
 The release should have a couple of days of "freeze" so that we don't cram last-minute code into a release.
 1 week looks like ideal but we envision 1 day strictly and possibly 3 days realistically for now.
 
@@ -289,20 +288,20 @@ Ambitions
 =========
 * Add implementation for lookahead in the HTTP downloader 
 
-### What ###
-Board grooming and issue cleanup
-### When ###
+### Board grooming and issue cleanup ###
+
+#### When ####
 4pm - 5pm 
-### Who ###
+#### Who ####
 Swarm core team
-### Results ###
+#### Results ####
 Updated board and issues.
 
-### What ###
-Module documentation
-### When ###
+### Module documentation ###
+
+#### When ####
 5pm - 7pm 
-### Who ###
+#### Who ####
 Swarm core team
-### Results ###
+#### Results ####
 Documentation at https://hackmd.io/SypHYi42T4CuCwIuJB86qQ?both
