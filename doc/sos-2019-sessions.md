@@ -284,8 +284,7 @@ The release should have a couple of days of "freeze" so that we don't cram last-
 * Follow up on results of pure retrieval tests
 * Sufficient documentation for our target audience
 
-Ambitions
-=========
+**Ambitions**
 * Add implementation for lookahead in the HTTP downloader 
 
 ### Board grooming and issue cleanup ###
