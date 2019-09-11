@@ -1,23 +1,15 @@
 # Simulation and test scenarios #
 
-For incentives, we need to setup a series of new testing scenarios.
-Running smoke tests alone is not enough. 
-Apart from tests to verify the correct execution of the code, we will need to 
-experiment, observe and analyze the behavior of nodes and network with different
-prices and thresholds. Due to the nature of such behavior as an emergent property
-of the network as a whole and of the interaction between nodes, such tests
-will only be meaningul if executed in a deployed network/cluster.
+For incentives, we need to set up a series of new testing scenarios. Running smoke tests alone is not enough. Apart from tests to verify the correct execution of the code, we will need to experiment, observe and analyze the behavior of nodes and network with different prices and thresholds. Due to the nature of such behavior as an emergent property of the network as a whole and of the interaction between nodes, such tests will only be meaningul if executed on a deployed network/cluster.
 
-Also, some of the tests will need the presence of a simulated blockchain.
-The network testing track is already setting up the framework which will allow such testing
-by providing infrastructure accordingly (e.g. ganache as blockchain backend).
+Also, some of the tests will need the presence of a simulated blockchain. The network testing track is already setting up the framework which will allow such testing by providing infrastructure accordingly (e.g. Ganache as a blockchain backend).
 
 We can thus roughly distinguish between:
 * Simulations
 * Integration tests
 * Experimentation tests
 
-This document aims at collecting the specification for the set of needed testing.
+This document aims to collect the specification for the set of needed testing.
 
 ## Simulations
 Simulations run as part of the go unit testing suite. 
