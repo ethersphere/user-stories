@@ -12,13 +12,7 @@ We can thus roughly distinguish between:
 This document aims to collect the specification for the set of needed testing.
 
 ## Simulations
-Simulations run as part of the go unit testing suite. 
-They spawn a configurable number of nodes in a single process and then can run
-individual interactions. They are mostly useful to run tests which should verify that
-a change in the code will not break integrity or correctness of existing code and which should
-run on every change of the code. They are not useful much for experimentation,
-nor for integration, as they should be focused on running fast to not extend too much
-the complete go unit suite. 
+Simulations run as part of the go unit testing suite. They spawn a configurable number of nodes in a single process and then can run individual interactions. They are mostly useful to verify that a change in the code does not break the integrity or correctness of the system, and thus should be run every time the code changes. They are not of much use for experimentation nor for integration, as they should be focused on running quickly so as not to extend the running time of the complete go unit test suite too much.
 
 ### Accounting correctness
 This is a test well suited for a simulation. At no point after a change the correctness of accounting should be broken.
