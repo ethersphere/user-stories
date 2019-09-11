@@ -18,9 +18,7 @@ Simulations run as part of the go unit testing suite. They spawn a configurable 
 This is a test well suited for a simulation. At no point after a change should the correctness of accounting be broken.
 
 **Description**: Launch n nodes, upload a file, sync, then download from different nodes, and check balances.
-
 **Expectation**: All balances should be symmetric with each other (`balanceA == -balanceB && balanceB == -balanceA`) and at least _some_ of them should be non-zero.
-
 **Restriction**: Keep balances below threshold so no cheques are emitted.
 
 ### Cheques correctness
