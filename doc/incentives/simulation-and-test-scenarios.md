@@ -36,22 +36,25 @@ Integration tests are tests that need to run as much as possible with all needed
 Still, they are used mainly for making sure that everything works correctly, and less so for experimentation. They should be able to run with a predefined configuration and setup and produce predictable results for verification of correctness. They should run as part of smoke test suite in the future. If they fail, they signal a problem with the code.
 
 ### Happy-day scenario
-This is the minimal integration test. It runs with a blockchain and a fixed oracle. It makes sure that with a fixed set of values, all is OK.
-**Description**: Deploy x nodes, a blockchain and oracles. Upload a file, sync, then download from different nodes. 
-**Expectation**: No errors (no need to check for values, the *Accounting correctness* simulation already did this)
+This is the minimal integration test. It runs with a blockchain and a fixed oracle. It makes sure that with a fixed set of values, all is OK.  
+
+**Description**: Deploy x nodes, a blockchain and oracles. Upload a file, sync, then download from different nodes.  
+**Expectation**: No errors (no need to check for values, the *Accounting correctness* simulation already did this)  
 **Restriction**: All nodes should have SWAP enabled and a valid chequebook smart contract deployed.
 
 ### Failure test
 Test for error scenarios in relation to blockchain and/or oracles.
-**Description**: Deploy x nodes. Test different error scenarios: no blockchain, no oracle, no both, wrong addresses, malfunctioning oracles (if makes sense), etc.
-**Expectation**: All error scenarios are handled in predictable and expected ways. 
+
+**Description**: Deploy x nodes. Test different error scenarios: no blockchain and/or no oracle, , wrong addresses, malfunctioning oracles (if makes sense), etc.  
+**Expectation**: All error scenarios are handled in predictable and expected ways.  
 **Restriction**: 
 
 ### Existing chequebook
-Test that an existing chequebook is indeed loaded if provided
-**Description**: Deploy x (small amount) nodes. Deploy chequebooks. Upload file, sync, download. Shutdown one node. Restart it with deployed chequebook. 
-**Expectation**: The deployed chequebook is loaded. Check integrity of the chequebook. 
-**Restriction**: This test may make most sense if there has been some interaction on the chequebook which is being reloaded (a/some cheque, cashing in, etc.)
+Test that an existing chequebook is indeed loaded if provided.
+
+**Description**: Deploy x (small amount) nodes. Deploy chequebooks. Upload file, sync, download. Shut down one node. Restart it with deployed chequebook.  
+**Expectation**: The deployed chequebook is loaded. Check integrity of the chequebook.  
+**Restriction**: This test may make more sense if there has been some interaction on the chequebook which is being reloaded (a/some cheque, cashing in, etc.)
 
 ## Experimentation tests
 Experimentation tests are obviously there to be able to experiment with values and observe/analyze the behavior of nodes.
