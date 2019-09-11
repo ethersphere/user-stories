@@ -17,15 +17,15 @@ Simulations run as part of the go unit testing suite. They spawn a configurable 
 ### Accounting correctness
 This is a test well suited for a simulation. At no point after a change should the correctness of accounting be broken.
 
-**Description**: Launch n nodes, upload a file, sync, then download from different nodes, and check balances.  
+**Description**: Launch _x_ nodes, upload a file, sync, then download from different nodes, and check balances.  
 **Expectation**: All balances should be symmetric with each other (`balanceA == -balanceB && balanceB == -balanceA`) and at least _some_ of them should be non-zero.  
 **Restriction**: All nodes should have SWAP enabled and a valid chequebook smart contract deployed. All thresholds should be equal and all nodes must be on the same network. Balances should be kept below the payment threshold so no cheques are emitted.  
 
 ### Cheques correctness
 Trigger multiple threshold crossings (and thus multiple cheque emissions).
 
-**Description**: Launch n nodes, upload a file, sync, then download from different nodes.  
-**Expectation**: An expected set of nodes has (multiple) cheques. The cumulative amount of cheque values and balances match. For all pair of nodes A & B: the last received cheque to node B from node A should match the last sent cheque from node A to node B.
+**Description**: Launch _x_ nodes, upload a file, sync, then download from different nodes.  
+**Expectation**: An expected set of nodes has (multiple) cheques. The cumulative amount of cheque values and balances match. For all pair of nodes _A_ & _B_: the last received cheque to node _B_ from node _A_ should match the last sent cheque from node _A_ to node _B_.  
 **Restriction**: All nodes should have SWAP enabled and a valid chequebook smart contract deployed. File size should be big enough to trigger cheque emissions, so fixed (non random) data and size should be used. Use snapshot.  
 
 ## Integration tests
@@ -33,9 +33,7 @@ Integration tests are tests that need to run as much as possible with all needed
 * Backends (blockchain)
 * Oracles
 
-Still, they are used mainly for making sure that everything works correctly, and less so for experimentation.
-They should be able to run with a predefined configuration and setup and produce predictable results for verification of correctness.
-They should run as part of smoke test suite in the future. If they fail, they signal a problem with the code.
+Still, they are used mainly for making sure that everything works correctly, and less so for experimentation. They should be able to run with a predefined configuration and setup and produce predictable results for verification of correctness. They should run as part of smoke test suite in the future. If they fail, they signal a problem with the code.
 
 ### Happy-day scenario
 This is the minimal integration test. It runs with a blockchain and a fixed oracle. It makes sure that with a fixed set of values, all is ok.
