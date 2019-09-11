@@ -12,13 +12,14 @@ We can thus roughly distinguish between:
 This document aims to collect the specification for the set of needed testing.
 
 ## Simulations
-Simulations run as part of the go unit testing suite. They spawn a configurable number of nodes in a single process and then can run individual interactions. They are mostly useful to verify that a change in the code does not break the integrity or correctness of the system, and thus should be run every time the code changes. They are not of much use for experimentation nor for integration, as they should be focused on running quickly so as not to extend the running time of the complete go unit test suite too much.
+Simulations run as part of the go unit testing suite. They spawn a configurable number of nodes in a single process and then can run individual interactions. They are mostly useful to verify that a change in the code does not break the integrity or correctness of the system, and thus should be run every time the code changes. They are not of much use for experimentation nor for integration, as they should be focused on running quickly so as not to significantly extend the running time of the complete test suite.
 
 ### Accounting correctness
-This is a test well suited for a simulation. At no point after a change the correctness of accounting should be broken.
-**Description**: Launch x nodes, upload a file, sync, then download from different nodes, and check balances.
-**Expectation**: All balances should be symmetric with each other (`balanceA == -balanceB && balanceB == -balanceA`)
-**Restriction**: Keep balances below threshold so to not emit cheques 
+This is a test well suited for a simulation. At no point after a change should the correctness of accounting be broken.
+
+**Description**: Launch n nodes, upload a file, sync, then download from different nodes, and check balances.
+**Expectation**: All balances should be symmetric with each other (`balanceA == -balanceB && balanceB == -balanceA`) and at least _some_ of them should be non-zero.
+**Restriction**: Keep balances below threshold so no cheques are emitted.
 
 ### Cheques correctness
 Trigger multiple thresholds crossing (and thus multiple cheques emission).
