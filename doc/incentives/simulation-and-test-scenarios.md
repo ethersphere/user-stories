@@ -47,7 +47,7 @@ Test for error scenarios in relation to blockchain and/or oracles.
 
 **Description**: Deploy x nodes. Test different error scenarios: no blockchain and/or no oracle, , wrong addresses, malfunctioning oracles (if makes sense), etc.  
 **Expectation**: All error scenarios are handled in predictable and expected ways.  
-**Restriction**: 
+**Restriction**: None.
 
 ### Existing chequebook
 Test that an existing chequebook is indeed loaded if provided.
@@ -57,19 +57,16 @@ Test that an existing chequebook is indeed loaded if provided.
 **Restriction**: This test may make more sense if there has been some interaction on the chequebook which is being reloaded (a/some cheque, cashing in, etc.)
 
 ## Experimentation tests
-Experimentation tests are obviously there to be able to experiment with values and observe/analyze the behavior of nodes.
-They should only be triggered manually.
-They may add instrumentation (graphana boards, tracing, etc.) in order for better observability.
-They may well be a special set of the same integration tests but different configuration, but we conceptually separate them for better identification of the testing tasks needed.
+These tests should be able to experiment with values and observe/analyze the behavior of nodes. They should only be triggered manually. They may add instrumentation (Grafana boards, tracing, etc.) in order for better observability. They may well be a special set of the same integration tests but with a different configuration, but we conceptually separate them for better identification of the testing tasks needed.
 
 ### Change MessageToHoney price
-Change this price and observe network
+Change this price and observe network.  
 **Description**: Deploy x nodes, blockchain and oracles. Set a specific price for messages. Manually upload files, sync, observe.
 
 ### Change HoneyToMoney price
-Change this price and observe network
+Change this price and observe network.  
 **Description**: Deploy x nodes, blockchain and oracles. Set a specific price in ETH. Manually upload files, sync, observe.
 
 ### Change prices on the fly 
-This is probably just the same as the above tests (which may be interesting to be run individually though). Change prices on a running network and observe.
+This is probably just the same as the above tests (which may be interesting to be run individually though). Change prices on a running network and observe.  
 **Description**: Deploy x nodes, blockchain and oracles with an initial value. Manually upload files, sync, observe, but also change prices on the fly.
