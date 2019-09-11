@@ -25,7 +25,7 @@ This is a test well suited for a simulation. At no point after a change should t
 Trigger multiple threshold crossings (and thus multiple cheque emissions).
 
 **Description**: Launch _x_ nodes, upload a file, sync, then download from different nodes.  
-**Expectation**: An expected set of nodes has (multiple) cheques. The cumulative amount of cheque values and balances match. For all pair of nodes _A_ & _B_: the last received cheque to node _B_ from node _A_ should match the last sent cheque from node _A_ to node _B_.  
+**Expectation**: An expected set of nodes has (multiple) cheques. The cumulative amount of cheque values and balances match. For every pair of nodes _A_ & _B_ the last received cheque to node _B_ from node _A_ should match the last sent cheque from node _A_ to node _B_.  
 **Restriction**: All nodes should have SWAP enabled and a valid chequebook smart contract deployed. File size should be big enough to trigger cheque emissions, so fixed (non random) data and size should be used. Use snapshot.  
 
 ## Integration tests
@@ -36,10 +36,10 @@ Integration tests are tests that need to run as much as possible with all needed
 Still, they are used mainly for making sure that everything works correctly, and less so for experimentation. They should be able to run with a predefined configuration and setup and produce predictable results for verification of correctness. They should run as part of smoke test suite in the future. If they fail, they signal a problem with the code.
 
 ### Happy-day scenario
-This is the minimal integration test. It runs with a blockchain and a fixed oracle. It makes sure that with a fixed set of values, all is ok.
+This is the minimal integration test. It runs with a blockchain and a fixed oracle. It makes sure that with a fixed set of values, all is OK.
 **Description**: Deploy x nodes, a blockchain and oracles. Upload a file, sync, then download from different nodes. 
 **Expectation**: No errors (no need to check for values, the *Accounting correctness* simulation already did this)
-**Restriction**: 
+**Restriction**: All nodes should have SWAP enabled and a valid chequebook smart contract deployed.
 
 ### Failure test
 Test for error scenarios in relation to blockchain and/or oracles.
