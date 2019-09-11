@@ -61,12 +61,15 @@ These tests should be able to experiment with values and observe/analyze the beh
 
 ### Change MessageToHoney price
 Change this price and observe network.  
+
 **Description**: Deploy x nodes, blockchain and oracles. Set a specific price for messages. Manually upload files, sync, observe.
 
 ### Change HoneyToMoney price
-Change this price and observe network.  
+Change this price and observe network.
+
 **Description**: Deploy x nodes, blockchain and oracles. Set a specific price in ETH. Manually upload files, sync, observe.
 
 ### Change prices on the fly 
 This is probably just the same as the above tests (which may be interesting to be run individually though). Change prices on a running network and observe.  
+
 **Description**: Deploy x nodes, blockchain and oracles with an initial value. Manually upload files, sync, observe, but also change prices on the fly.
